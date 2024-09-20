@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="page-loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+        <div class="loader"></div>
+    </div>
+    <header class="w-screen h-11 lg:h-20 px-4 lg:px-12 flex items-center justify-center gap-8 lg:justify-center">
+        <div class="logo w-18 h-12 hidden lg:block">
+            <img class="w-full h-full" src="header-logo.png" alt="Logo" />
+        </div>
+
+        <div class="lg:hidden flex justify-between items-center w-screen">
+            <div class="flex w-full justify-around items-center gap-4">
+                <div class="header-image w-8 h-8">
+                    <img class="w-full h-full" src="header-image.png" alt="" />
+                </div>
+                <div class="w-8 h-8">
+                    <img class="w-full h-full" src="online-consultation.png" alt="Consultation" />
+                </div>
+                <div class="w-8 h-8">
+                    <img class="w-full h-full" src="phone.png" alt="Phone" />
+                </div>
+                <div class="w-8 h-8">
+                    <img class="w-full h-full" src="mail.png" alt="Email" />
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden lg:flex gap-10">
+            <div class="flex gap-4 items-center">
+                <div class="header-image w-11 h-11">
+                    <img class="w-full h-full" src="header-image.png" alt="" />
+                </div>
+            </div>
+            <div class="flex gap-4 items-center">
+                <div class="w-10 h-8">
+                    <img class="w-full h-full" src="online-consultation.png" alt="Consultation" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-gray-500 font-semibold">Second Medical Opinion</span>
+                    <span class="text-black font-bold">Book consultation</span>
+                </div>
+            </div>
+            <div class="flex gap-4 items-center">
+                <div class="w-10 h-8">
+                    <img class="w-full h-full" src="phone.png" alt="Phone" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-gray-500 font-semibold">Call us on</span>
+                    <span class="text-black font-bold">3655328456</span>
+                </div>
+            </div>
+            <div class="flex gap-4 items-center">
+                <div class="w-10 h-8">
+                    <img class="w-full h-full" src="mail.png" alt="Email" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-gray-500 font-semibold">Email us on</span>
+                    <span class="text-black font-bold">info@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav
+        class="bg-gradient-to-r from-blue-500 to-blue-700 h-16 w-screen flex justify-center items-center sticky top-0 z-20">
+        <div class="flex w-full justify-around items-center">
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="w-max h-10 lg:hidden">
+                <img class="w-max h-full" src="header-logo.png" alt="Logo" />
+            </div>
+
+            <ul id="navbar" class="hidden md:flex space-x-6">
+                <li class="relative">
+                    <a href="#" style="color: white;">Home</a>
+                </li>
+                <li class="relative">
+                    <a href="#" style="color: white;">About Us</a>
+                </li>
+                <li class="relative">
+                    <a href="#" style="color: white;">Treatments+</a>
+                </li>
+                <li class="relative">
+                    <a href="#" style="color: white;">Destinations+</a>
+                </li>
+                <li class="relative">
+                    <a href="#" style="color: white;">Hospitals</a>
+                </li>
+                <li class="relative">
+                    <a href="#" style="color: white;">FAQs</a>
+                </li>
+                <li class="relative">
+                    <a href="#" style="color: white;">Blog</a>
+                </li>
+                <li class="relative">
+                    <a href="#" style="color: white;">Request A Quote</a>
+                </li>
+            </ul>
+
+            <div class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded">
+                <input type="text" placeholder="Search"
+                    class="bg-transparent outline-none text-white placeholder-white" />
+            </div>
+        </div>
+
+        <div id="menu"
+            class="fixed top-0 left-0 h-screen w-[50%] bg-blue-500 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex justify-end p-4">
+                <button id="close-menu" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <ul class="">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Treatments+</a></li>
+                <li>
+                    <a href="#">Destinations+</a>
+                </li>
+                <li><a href="#">Hospitals</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Blog</a></li>
+                <li>
+                    <a href="#">Request A Quote</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section class="">
+        <div class="">
+            <div class="breadcrumbs" style="color: white; background-image: url(bg_bldg.jpg); ">
+                <a href="#" style="padding-left: 70px; ">Home <span style="color: red;">></span></a>
+                <a href="#">Treatments <span style="color: red;">></span></a>
+                <a href="#">Orthopaedics <span style="color: red;">></span></a>
+                <a href="#">Knee Replacement</a>
+                <img class="w-full" style="height: 400px;" src="bg_bldg.jpg" alt="hero-image" />
+            </div>
+        </div>
+        <div class="hero-info lg:px-16 px-4 flex flex-col justify-center items-start gap-4">
+            <h1 class="text-2xl font-bold">
+                Total knee Replacement </h1>
+            <span>Total knee Replacement is a surgery to remove and replace the whole damaged knee joint with an artificial joint</span>
+            <button class="bg-blue-500 px-4 py-2 button">Enquire Now</button>
+        </div>
+    </section>
+
+    <div
+        class="selection-menu w-screen h-16 py-4 px-8 flex justify-center bg-white border-b-2 border-gray-200 items-center sticky top-0 z-30">
+        <ul class="w-full hidden lg:flex justify-center gap-6 items-center">
+            <li class="cursor-pointer">
+                <a href="#overview"> Overview </a>
+            </li>
+            <li class="cursor-pointer">
+                <a href="#eligibilty"> Eligibilty </a>
+            </li>
+            <li class="cursor-pointer">
+                <a href="#preparation"> Preparation </a>
+            </li>
+            <li class="cursor-pointer">
+                <a href="#about_treatment"> About Treatment </a>
+            </li>
+            <li class="cursor-pointer">
+                <a href="#post_treatment"> Post-treatment Care </a>
+            </li>
+            <li class="cursor-pointer">
+                <a href="#recovery-tips"> Recovery tips </a>
+            </li>
+            <li class="cursor-pointer">
+                <a href="#FAQs"> FAQs </a>
+            </li>
+            <li class="cursor-pointer">
+                <a href="#patient_stories"> Patient stories </a>
+            </li>
+        </ul>
+        <div class="selector-div flex lg:hidden">
+            <select name="" id="" class="px-5 py-2 rounded-sm select">
+                <option value="open this menu">open this menu</option>
+                <option value="overview"><a href="#overview"> Overview </a></option>
+                <option value="eligibilty">
+                    <a href="#eligibilty"> Eligibilty </a>
+                </option>
+                <option value="preparation">
+                    <a href="#preparation"> Preparation </a>
+                </option>
+                <option value="about treatment">
+                    <a href="#about_treatment"> About Treatment </a>
+                </option>
+                <option value="post-treament">
+                    <a href="#post_treatment"> Post-treatment Care </a>
+                </option>
+                <option value="recovery tips">
+                    <a href="#recovery-tips"> Recovery tips </a>
+                </option>
+                <option value="FAQs"><a href="#FAQs"> FAQs </a></option>
+                <option value="patient stories">
+                    <a href="#patient_stories"> Patient stories </a>
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="w-screen h-max flex flex-col justify-center gap-4 px-4 lg:px-[6rem] py-8" id="overview">
+        <div class="flex justify-center gap-4">
+            <div class="overview-text w-[50%]">
+                <h1 class="text-3xl font-bold my-2">
+                    Treatment Overview<span class="text-red-500">.</span>
+                </h1>
+                <span class="my-2 text-gray-500">
+                    Lorem incididunt ut labore ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit anim id est laborum.
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam.
+                </span>
+            </div>
+            <div class="image w-[50%] flex justify-end">
+                <img src="treatment_overview.png" class="w-[400px] h-auto" alt="" />
+            </div>
+        </div>
+        <hr style="border-top: dotted 1.5px" class="text-blue-500" />
+    </div>
+    <div class="w-screen flex flex-col lg:flex-row px-10 lg:px-[6rem]">
+        <div class="left w-full lg:w-[80%]">
+            <div class="w-full h-max flex flex-col justify-center gap-4 py-8 lg:px-2" id="eligibility">
+                <div class="flex justify-center w-full flex-col gap-4">
+                    <h1 class="text-3xl font-bold my-2">
+                        Eligibility For Treatment<span class="text-red-500">.</span>
+                    </h1>
+                    <span class="my-2 text-gray-500">
+                        Any individual who has tried diet and exercise but failed to lose weight is considered as a good
+                        candidate for gastric bypass. Although gastric bypass aids in weight loss, it is not an
+                        appropriate option for everyone. Based on the overall health and certain medical guidelines, the
+                        doctor will decide whether you are eligible for gastric bypass or not. <br> <br>
+                        In general, gastric bypass could be a good option if: <br>
+                        o The BMI (body mass index) is 40 or more <br>
+                        o Your BMI is 30 or more with severe weight-related health conditions like type-2 diabetes and
+                        high blood pressure <br>
+                        o You are willing to make permanent changes in the lifestyle
+                    </span>
+                </div>
+                <hr style="border-top: dotted 1.5px" class="text-blue-500" />
+            </div>
+            <div id="preparation" class="w-full h-max flex flex-col justify-center gap-4 py-8 px-2">
+                <div class="flex justify-center w-full flex-col gap-4">
+                    <h1 class="text-3xl font-bold my-2">
+                        Preparation Before Treatment<span class="text-red-500">.</span>
+                    </h1>
+                    <span class="my-2 text-gray-500">Any individual who has tried diet and exercise but failed to lose
+                        weight is considered as a good candidate for gastric bypass. Although gastric bypass aids in
+                        weight loss, it is not an appropriate option for everyone. Based on the overall health and
+                        certain medical guidelines, the doctor will decide whether you are eligible for gastric bypass
+                        or not. <br> <br>
+                        In general, gastric bypass could be a good option if: <br>
+                        o The BMI (body mass index) is 40 or more <br>
+                        o Your BMI is 30 or more with severe weight-related health conditions like type-2 diabetes and
+                        high blood pressure <br>
+                        o You are willing to make permanent changes in the lifestyle
+                    </span>
+                </div>
+                <hr style="border-top: dotted 1.5px" class="text-blue-500" />
+            </div>
+            <div id="about_treatment" class="w-full h-max flex flex-col justify-center gap-4 py-8 px-2">
+                <div class="flex justify-center w-full flex-col gap-4">
+                    <h1 class="text-3xl font-bold my-2">
+                        About Treatment<span class="text-red-500">.</span>
+                    </h1>
+                    <span class="my-2 text-gray-500">Any individual who has tried diet and exercise but failed to lose
+                        weight is considered as a good candidate for gastric bypass. Although gastric bypass aids in
+                        weight loss, it is not an appropriate option for everyone. Based on the overall health and
+                        certain medical guidelines, the doctor will decide whether you are eligible for gastric bypass
+                        or not. <br> <br>
+                        In general, gastric bypass could be a good option if: <br>
+                        o The BMI (body mass index) is 40 or more <br>
+                        o Your BMI is 30 or more with severe weight-related health conditions like type-2 diabetes and
+                        high blood pressure <br>
+                        o You are willing to make permanent changes in the lifestyle
+                    </span>
+                </div>
+                <hr style="border-top: dotted 1.5px" class="text-blue-500" />
+            </div>
+            <div id="post_treatment" class="w-full h-max flex flex-col justify-center gap-4 py-8 px-2">
+                <div class="flex justify-center w-full flex-col gap-4">
+                    <h1 class="text-3xl font-bold my-2">
+                        Post-Treatment Care Treatment<span class="text-red-500">.</span>
+                    </h1>
+                    <span class="my-2 text-gray-500">Any individual who has tried diet and exercise but failed to lose
+                        weight is considered as a good candidate for gastric bypass. Although gastric bypass aids in
+                        weight loss, it is not an appropriate option for everyone. Based on the overall health and
+                        certain medical guidelines, the doctor will decide whether you are eligible for gastric bypass
+                        or not. <br> <br>
+                        In general, gastric bypass could be a good option if: <br>
+                        o The BMI (body mass index) is 40 or more <br>
+                        o Your BMI is 30 or more with severe weight-related health conditions like type-2 diabetes and
+                        high blood pressure <br>
+                        o You are willing to make permanent changes in the lifestyle
+                    </span>
+                </div>
+                <hr style="border-top: dotted 1.5px" class="text-blue-500" />
+            </div>
+            <div id="recovery-tips" class="w-full h-max flex flex-col justify-center gap-4 py-8 px-2">
+                <div class="flex justify-center w-full flex-col gap-4">
+                    <h1 class="text-3xl font-bold my-2">
+                        Treatment Recovery Tips<span class="text-red-500">.</span>
+                    </h1>
+                    <span class="my-2 text-gray-500">Any individual who has tried diet and exercise but failed to lose
+                        weight is considered as a good candidate for gastric bypass. Although gastric bypass aids in
+                        weight loss, it is not an appropriate option for everyone. Based on the overall health and
+                        certain medical guidelines, the doctor will decide whether you are eligible for gastric bypass
+                        or not. <br> <br>
+                        In general, gastric bypass could be a good option if: <br>
+                        o The BMI (body mass index) is 40 or more <br>
+                        o Your BMI is 30 or more with severe weight-related health conditions like type-2 diabetes and
+                        high blood pressure <br>
+                        o You are willing to make permanent changes in the lifestyle
+                    </span>
+                </div>
+                <hr style="border-top: dotted 1.5px" class="text-blue-500" />
+            </div>
+            <div id="FAQs" class="w-full h-max flex flex-col justify-center gap-4 py-8 px-2">
+                <div class="flex justify-center w-full flex-col gap-4">
+                    <h1 class="text-3xl font-bold my-2">
+                        Treatment FAQs<span class="text-red-500">.</span>
+                    </h1>
+                    <div class="flex items-center flex-wrap gap-4 border-b-[1px] py-6 border-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4 plus cursor-pointer">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4 minus cursor-pointer hidden">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                        <span>How do I know the clinic I am searching is verified?</span>
+                        <div class="content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="border-t-[1px] border-blue-300">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem suscipit
+                                ducimus magnam quibusdam quisquam fuga nisi, pariatur commodi inventore fugiat.
+                            </p>
+                        </div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4 plus cursor-pointer">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4 minus cursor-pointer hidden">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                        <span>I can't travel alone so can some family member or friend of mine accompany me?</span>
+                        <div class="content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="border-t-[1px] border-blue-300">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis id labore, recusandae
+                                pariatur molestias sed corrupti quibusdam suscipit, quos praesentium minus expedita
+                                tempora dolor numquam vel deleniti exercitationem ipsam cum.
+                            </p>
+                        </div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4 plus cursor-pointer">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4 minus cursor-pointer hidden">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                        <span>Can I see my doctor before I decide and what about my post recovery?</span>
+                        <div class="content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="border-t-[1px] border-blue-300">
+                                Yes, pre and post treatment consultation can be done. You can speak to the doctor at the
+                                most appropriate time (before you decide to travel) to boost your confidence. The team
+                                at Mediretreats will also help you with arranging the OPD'S after the surgeries.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr style="border-top: dotted 1.5px" class="text-blue-500" />
+            </div>
+            <div id="patient_stories" class="slider p-2">
+                <h1 class="text-2xl font-semibold">Patient Stories & Videos</h1>
+                <div class="owl-carousel owl-carousel-1 owl-theme">
+                    <div class="slider-card border-[1.5px] p-2">
+                        <div class="flex flex-col justify-center items-center mb-4">
+                            <div class="heading w-full flex items-center justify-evenly">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                    <path
+                                        d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="image w-[80%] h-[80%]">
+                                <img class="w-full h-full" src="patient_1.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-card border-[1.5px] p-2">
+                        <div class="flex flex-col justify-center items-center mb-4">
+                            <div class="heading w-full flex items-center justify-evenly">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                    <path
+                                        d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="image w-[80%] h-[80%]">
+                                <img class="w-full h-full" src="patient_2.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-card border-[1.5px] p-2">
+                        <div class="flex flex-col justify-center items-center mb-4">
+                            <div class="heading w-full flex items-center justify-evenly">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                    <path
+                                        d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="image w-[80%] h-[80%]">
+                                <img class="w-full h-full" src="patient_1.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-card border-[1.5px] p-2">
+                        <div class="flex flex-col justify-center items-center mb-4">
+                            <div class="heading w-full flex items-center justify-evenly">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                    <path
+                                        d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="image w-[80%] h-[80%]">
+                                <img class="w-full h-full" src="patient_2.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right lg:w-[20%] w-full rounded h-[80vh] px-4 flex flex-col justify-around items-center">
+            <div>
+                <h1 class="text-xl font-bold" style="color: rgb(125, 208, 236);">Need Help?</h1>
+                <span class="text-gray-500 text-sm">Just let us know. We will be happy to assist you.</span>
+            </div>
+            <form class="w-full flex flex-col justify-center items-center" action="">
+                <input class="border-[1.5px] rounded p-2 my-2" type="text" placeholder="Full Name" />
+                <input class="border-[1.5px] rounded p-2 my-2" type="text" placeholder="Email" />
+                <input class="border-[1.5px] rounded p-2 my-2" type="text" placeholder="Phone number" />
+                <input class="border-[1.5px] rounded p-2 my-2" type="text"
+                    placeholder="Describe your Treatment Requirement"></input>
+            </form>
+            <button class="button" style="border-radius: 10px;">Send Enquiry</button>
+        </div>
+    </div>
+    <section class="w-screen h-screen bg-blue-100">
+        <div class="slider h-full flex flex-col justify-center items-center gap-4 p-2">
+            <i class="font-bold text-xl text-red-500">Doctors</i>
+            <h1 class="text-2xl font-semibold">Top Orthopaedic Doctors</h1>
+            <div class="owl-carousel owl-carousel-2 owl-theme">
+                <div class="slider-card h-[350px] h-[350px] bg-white p-2">
+                    <div class="image bg-red-300 w-full h-[70%]"></div>
+                    <div class="h-[30%] flex flex-col justify-center items-center w-full">
+                        <h1 class="text-red-500">Dr. Faique Falke</h1>
+                        <span class="text-blacl">Musaffa Industrial - Abu Dhabi</span>
+                        <span class="text-gray-400">Doctor Degree & Specialist</span>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image bg-red-300 w-full h-[70%]"></div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <h1 class="text-red-500">Dr. Faique Falke</h1>
+                        <span class="text-blacl">Musaffa Industrial - Abu Dhabi</span>
+                        <span class="text-gray-400">Doctor Degree & Specialist</span>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image bg-red-300 w-full h-[70%]"></div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <h1 class="text-red-500">Dr. Faique Falke</h1>
+                        <span class="text-blacl">Musaffa Industrial - Abu Dhabi</span>
+                        <span class="text-gray-400">Doctor Degree & Specialist</span>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image bg-red-300 w-full h-[70%]"></div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <h1 class="text-red-500">Dr. Faique Falke</h1>
+                        <span class="text-blacl">Musaffa Industrial - Abu Dhabi</span>
+                        <span class="text-gray-400">Doctor Degree & Specialist</span>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image bg-red-300 w-full h-[70%]"></div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <h1 class="text-red-500">Dr. Faique Falke</h1>
+                        <span class="text-blacl">Musaffa Industrial - Abu Dhabi</span>
+                        <span class="text-gray-400">Doctor Degree & Specialist</span>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image bg-red-300 w-full h-[70%]"></div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <h1 class="text-red-500">Dr. Faique Falke</h1>
+                        <span class="text-blacl">Musaffa Industrial - Abu Dhabi</span>
+                        <span class="text-gray-400">Doctor Degree & Specialist</span>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image bg-red-300 w-full h-[70%]"></div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <h1 class="text-red-500">Dr. Faique Falke</h1>
+                        <span class="text-blacl">Musaffa Industrial - Abu Dhabi</span>
+                        <span class="text-gray-400">Doctor Degree & Specialist</span>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image bg-red-300 w-full h-[70%]"></div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <h1 class="text-red-500">Dr. Faique Falke</h1>
+                        <span class="text-blacl">Musaffa Industrial - Abu Dhabi</span>
+                        <span class="text-gray-400">Doctor Degree & Specialist</span>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image bg-red-300 w-full h-[70%]"></div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <h1 class="text-red-500">Dr. Faique Falke</h1>
+                        <span class="text-blacl">Musaffa Industrial - Abu Dhabi</span>
+                        <span class="text-gray-400">Doctor Degree & Specialist</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="w-screen h-screen">
+        <div class="slider h-full flex flex-col justify-center items-center gap-4 p-2">
+            <i class="font-bold text-xl text-red-500">Hospitals</i>
+            <h1 class="text-2xl font-semibold">Recommended <span style="color: rgb(125, 208, 236);">Hospitals</span>
+            </h1>
+            <div class="owl-carousel owl-carousel-2 owl-theme">
+                <div class="slider-card h-[350px] h-[350px] bg-white p-2">
+                    <div class="image w-full h-[70%]">
+                        <img src="Apollo.png" style="height: 250px; width: 400px;" alt="" />
+                    </div>
+                    <div class="h-[30%] flex flex-col justify-center items-center w-full">
+                        <span class="text-blacl">Apollo Hospital</span>
+                        <h1 class="text-red-500">Banglore</h1>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image w-full h-[70%]">
+                        <img src="Medanta.png" style="height: 250px; width: 400px;" alt="" />
+                    </div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <span class="text-blacl">Medanta Hospital</span>
+                        <h1 class="text-red-500">Gurgaon</h1>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image w-full h-[70%]">
+                        <img src="Jaslok.png" style="height: 250px; width: 400px;" alt="" />
+                    </div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <span class="text-blacl">Jaslok Hospital</span>
+                        <h1 class="text-red-500">Mumbai</h1>
+                    </div>
+                </div>
+                <div class="slider-card h-[350px] bg-white p-2">
+                    <div class="image w-full h-[70%]">
+                        <img src="/assets/jpg" alt="" />
+                    </div>
+                    <div class="h-[30%] w-full flex flex-col justify-center items-center">
+                        <span class="text-blacl">Lorem ipsum dolor sit amet.</span>
+                        <h1 class="text-red-500">Lorem ipsum dolor sit.</h1>
+                    </div>
+                </div>
+            </div>
+            <p>Don't hesitate, contact us for better help and services. <a href="#" style="color: red; "><u>Explore all
+                        Hospitals</u></a></p>
+        </div>
+    </section>
+
+    <div class="w-screen h-[300px] px-4 text-white flex flex-col justify-center items-center bg-blue-400"
+        style="background-image: url(dot_globe_2.jpg); background-repeat: round;">
+        <span class="text-md">Stay healthy and strong to enjoy life</span>
+        <span class="text-3xl"><strong>We have team of healthcare experts</strong> </span>
+        <div class="flex items-center justify-center gap-4">
+            <button class="button" style="border-radius: none ;">Get in touch</button>
+            <div class="border-r-2 h-[50px]"></div>
+            <span>+91 92783434</span>
+        </div>
+    </div>
+
+    <footer class=" body-font" style="background-image: url(bg_bldg.jpg); background-repeat: round;">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+                <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                    <h2 style="color: white;">
+                        Important Links
+                    </h2>
+                    <nav class="list-none mb-10">
+                        <li style="color: white;">
+                            <a href="#">Home</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">About</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">FAQs</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Contact us</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                    <h2 style="color: white;">
+                        Top Hospitals
+                    </h2>
+                    <nav class="">
+                        <li style="color: white;">
+                            <a href="#">Apollo Hospital Delhi</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Medanta Hospital Gurgaon</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Max Hospital Delhi</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Jaslok hospital Mumbai</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Artemis hospital Gurgaon</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Fortis Hospital Gurgaon</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">View All</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                    <h2 style="color: white;">
+                        Speciality Treatments
+                    </h2>
+                    <nav class="">
+                        <li style="color: white;">
+                            <a href="#">Knee Replacement Surgeon</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Urologist</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Spine Surgeon</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">ENT Surgeons</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Orthopedic</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">Cardiologist</a>
+                        </li>
+                        <li style="color: white;">
+                            <a href="#">View All</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="">
+                    <h2 style="color: white;">
+                        CATEGORIES
+                    </h2>
+                    <nav class="">
+                        <li style="color: white;">
+                            <a>First Link</a>
+                        </li>
+                        <li style="color: white;">
+                            <a>Second Link</a>
+                        </li>
+                        <li style="color: white;">
+                            <a>Third Link</a>
+                        </li>
+                        <li style="color: white;">
+                            <a>Fourth Link</a>
+                        </li>
+                    </nav>
+                </div>
+
+                <div
+                    style="display: inline; background-color: white; margin-left: 250px; height: 100px; border-radius: 5px;">
+                    <img src="foot.png" alt="" style="display: inline-block;">
+                    <span>Are you a doctor / hospital?</span>
+                    <strong>Join Mediretreats</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr style="color: white;">
+
+        <div class="container mx-auto text-center lg:text-left mt-10">
+            <img src="header-logo.png" alt="logo" width="500px" style="display: inline;">
+            <div class="" style="display: inline-block;">
+                <h2 class="title-font font-medium text-white text-xl mb-3">About Aafiya Meditreats</h2>
+                <p class="text-gray-400">
+                    Aafiya Meditreats is a free, confidential, independent resource for patients and industry providers.
+                    Our mission is to provide a central portal where patients, Medical Tourism providers, hospitals,
+                    clinics, employers, and insurance companies can find all the information they need.
+                </p>
+            </div>
+        </div>
+
+        <div style="background-color: rgb(125, 208, 236);">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-500 text-sm text-center sm:text-left">
+                    Copyright © 2020 Aafiya Meditreats. All Rights Reserved. Designed by Ideamagix.
+                </p>
+                <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">
+                    Terms and Conditions | Privacy Policy
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <hr>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
